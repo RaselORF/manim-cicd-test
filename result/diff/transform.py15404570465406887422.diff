@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/animation/transform.py
++++ /workspace/source/manimlib/animation/transform.py
+@@ -147,6 +147,8 @@
+ 
+     def check_validity_of_input(self, mobject: Mobject) -> None:
+         if not hasattr(mobject, "target"):
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception(
+                 "MoveToTarget called on mobject without attribute 'target'"
+             )

@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/types/image_mobject.py
++++ /workspace/source/manimlib/mobject/types/image_mobject.py
+@@ -65,6 +65,8 @@
+         y_alpha = inverse_interpolate(y0, y1, point[1])
+         if not (0 <= x_alpha <= 1) and (0 <= y_alpha <= 1):
+             # TODO, raise smarter exception
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Cannot sample color from outside an image")
+ 
+         pw, ph = self.image.size

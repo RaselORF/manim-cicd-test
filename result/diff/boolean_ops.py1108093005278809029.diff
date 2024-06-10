@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/boolean_ops.py
++++ /workspace/source/manimlib/mobject/boolean_ops.py
+@@ -45,6 +45,8 @@
+             elif path_verb == PathVerb.QUAD:
+                 vmobject.add_quadratic_bezier_curve_to(*points)
+             else:
++                # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++                # Raise a more specific built-in exception or, create a custom one.
+                 raise Exception(f"Unsupported: {path_verb}")
+     return vmobject.reverse_points()
+ 

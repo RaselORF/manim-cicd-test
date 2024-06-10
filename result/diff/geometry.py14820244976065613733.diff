@@ -1,0 +1,12 @@
+--- /workspace/source/manimlib/mobject/geometry.py
++++ /workspace/source/manimlib/mobject/geometry.py
+@@ -320,6 +320,9 @@
+         buff: float = MED_SMALL_BUFF
+     ) -> Self:
+         self.replace(mobject, dim_to_match, stretch)
++        # OpenRefactory Warning: The following expression
++        #     (self.get_width() + 2 * buff) / self.get_width()
++        # contains redundant method call 'self.get_width()'
+         self.stretch((self.get_width() + 2 * buff) / self.get_width(), 0)
+         self.stretch((self.get_height() + 2 * buff) / self.get_height(), 1)
+         return self

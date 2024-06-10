@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/mobject.py
++++ /workspace/source/manimlib/mobject/mobject.py
+@@ -2114,6 +2114,8 @@
+             message = "Cannot call Mobject.{} " +\
+                       "for a Mobject with no points"
+             caller_name = sys._getframe(1).f_code.co_name
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception(message.format(caller_name))
+ 
+ 

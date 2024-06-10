@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/utils/color.py
++++ /workspace/source/manimlib/utils/color.py
+@@ -23,6 +23,8 @@
+     elif isinstance(color, Color):
+         return np.array(color.get_rgb())
+     else:
++        # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++        # Raise a more specific built-in exception or, create a custom one.
+         raise Exception("Invalid color type")
+ 
+ 

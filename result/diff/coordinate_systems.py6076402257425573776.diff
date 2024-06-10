@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/coordinate_systems.py
++++ /workspace/source/manimlib/mobject/coordinate_systems.py
+@@ -66,6 +66,8 @@
+ 
+     @abstractmethod
+     def point_to_coords(self, point: Vect3 | Vect3Array) -> tuple[float | VectN, ...]:
++        # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++        # Raise a more specific built-in exception or, create a custom one.
+         raise Exception("Not implemented")
+ 
+     def c2p(self, *coords: float) -> Vect3 | Vect3Array:

@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/svg/svg_mobject.py
++++ /workspace/source/manimlib/mobject/svg/svg_mobject.py
+@@ -134,6 +134,8 @@
+ 
+     def get_file_path(self) -> str:
+         if self.file_name is None:
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Must specify file for SVGMobject")
+         return get_full_vector_image_path(self.file_name)
+ 

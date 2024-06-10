@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/types/surface.py
++++ /workspace/source/manimlib/mobject/types/surface.py
+@@ -294,6 +294,8 @@
+         **kwargs
+     ):
+         if not isinstance(uv_surface, Surface):
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("uv_surface must be of type Surface")
+         # Set texture information
+         if dark_image_file is None:

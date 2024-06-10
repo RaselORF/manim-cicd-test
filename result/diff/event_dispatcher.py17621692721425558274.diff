@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/event_handler/event_dispatcher.py
++++ /workspace/source/manimlib/event_handler/event_dispatcher.py
+@@ -29,6 +29,8 @@
+         try:
+             while event_listner in self.event_listners[event_listner.event_type]:
+                 self.event_listners[event_listner.event_type].remove(event_listner)
++        # OpenRefactory Warning: Too broad exception clause.
++        # Instead of using an empty except block use a more specific built-in exception or, create a custom one.
+         except:
+             # raise ValueError("Handler is not handling this event, so cannot remove it.")
+             pass

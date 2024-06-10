@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/event_handler/event_listner.py
++++ /workspace/source/manimlib/event_handler/event_listner.py
+@@ -26,6 +26,8 @@
+             return_val = self.callback == o.callback \
+                 and self.mobject == o.mobject \
+                 and self.event_type == o.event_type
++        # OpenRefactory Warning: Too broad exception clause.
++        # Instead of using an empty except block use a more specific built-in exception or, create a custom one.
+         except:
+             pass
+         return return_val

@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/animation/transform.py
++++ /workspace/source/manimlib/animation/transform.py
+@@ -248,6 +248,8 @@
+ class Restore(Transform):
+     def __init__(self, mobject: Mobject, **kwargs):
+         if not hasattr(mobject, "saved_state") or mobject.saved_state is None:
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Trying to restore without having saved")
+         super().__init__(mobject, mobject.saved_state, **kwargs)
+ 

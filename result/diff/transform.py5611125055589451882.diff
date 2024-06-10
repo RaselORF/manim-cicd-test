@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/animation/transform.py
++++ /workspace/source/manimlib/animation/transform.py
+@@ -82,6 +82,8 @@
+ 
+     def check_target_mobject_validity(self) -> None:
+         if self.target_mobject is None:
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception(
+                 f"{self.__class__.__name__}.create_target not properly implemented"
+             )

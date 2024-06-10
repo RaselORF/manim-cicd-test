@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/animation/transform.py
++++ /workspace/source/manimlib/animation/transform.py
+@@ -265,6 +265,8 @@
+     def create_target(self) -> Mobject:
+         target = self.function(self.mobject.copy())
+         if not isinstance(target, Mobject):
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Functions passed to ApplyFunction must return object of type Mobject")
+         return target
+ 

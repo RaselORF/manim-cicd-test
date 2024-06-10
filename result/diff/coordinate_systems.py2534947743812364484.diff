@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/coordinate_systems.py
++++ /workspace/source/manimlib/mobject/coordinate_systems.py
+@@ -376,6 +376,8 @@
+             elif input_sample_type == "center":
+                 sample = 0.5 * x0 + 0.5 * x1
+             else:
++                # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++                # Raise a more specific built-in exception or, create a custom one.
+                 raise Exception("Invalid input sample type")
+             height_vect = self.i2gp(sample, graph) - self.c2p(sample, 0)
+             rect = Rectangle(

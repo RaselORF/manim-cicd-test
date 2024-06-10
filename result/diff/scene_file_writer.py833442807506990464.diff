@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/scene/scene_file_writer.py
++++ /workspace/source/manimlib/scene/scene_file_writer.py
+@@ -194,6 +194,8 @@
+         if time is None:
+             time = curr_end
+         if time < 0:
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Adding sound at timestamp < 0")
+ 
+         new_end = time + new_segment.duration_seconds

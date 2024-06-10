@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/svg/drawings.py
++++ /workspace/source/manimlib/mobject/svg/drawings.py
+@@ -604,6 +604,8 @@
+         square.round_corners(corner_radius)
+ 
+         if not (1 <= value <= 6):
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("DieFace only accepts integer inputs between 1 and 6")
+ 
+         edge_group = [

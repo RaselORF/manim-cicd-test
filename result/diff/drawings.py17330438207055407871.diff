@@ -1,0 +1,12 @@
+--- /workspace/source/manimlib/mobject/svg/drawings.py
++++ /workspace/source/manimlib/mobject/svg/drawings.py
+@@ -537,6 +537,9 @@
+             bk = key.copy()
+             bk.move_to(midpoint(wk1.get_top(), wk2.get_top()), UP)
+             big_bk = bk.copy()
++            # OpenRefactory Warning: The following expression
++            #     (bk.get_width() + self.key_buff) / bk.get_width()
++            # contains redundant method call 'bk.get_width()'
+             big_bk.stretch((bk.get_width() + self.key_buff) / bk.get_width(), 0)
+             big_bk.stretch((bk.get_height() + self.key_buff) / bk.get_height(), 1)
+             big_bk.move_to(bk, UP)

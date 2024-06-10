@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/mobject.py
++++ /workspace/source/manimlib/mobject/mobject.py
+@@ -663,6 +663,8 @@
+ 
+     def restore(self) -> Self:
+         if not hasattr(self, "saved_state") or self.saved_state is None:
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Trying to restore without having saved")
+         self.become(self.saved_state)
+         return self

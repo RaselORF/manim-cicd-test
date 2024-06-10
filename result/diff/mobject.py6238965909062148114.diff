@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/mobject.py
++++ /workspace/source/manimlib/mobject/mobject.py
+@@ -404,6 +404,8 @@
+ 
+     def add(self, *mobjects: Mobject) -> Self:
+         if self in mobjects:
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Mobject cannot contain self")
+         for mobject in mobjects:
+             if mobject not in self.submobjects:

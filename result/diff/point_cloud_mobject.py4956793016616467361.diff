@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/mobject/types/point_cloud_mobject.py
++++ /workspace/source/manimlib/mobject/types/point_cloud_mobject.py
+@@ -106,6 +106,8 @@
+ class PGroup(PMobject):
+     def __init__(self, *pmobs: PMobject, **kwargs):
+         if not all([isinstance(m, PMobject) for m in pmobs]):
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("All submobjects must be of type PMobject")
+         super().__init__(**kwargs)
+         self.add(*pmobs)

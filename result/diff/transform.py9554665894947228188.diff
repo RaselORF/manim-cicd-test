@@ -1,0 +1,11 @@
+--- /workspace/source/manimlib/animation/transform.py
++++ /workspace/source/manimlib/animation/transform.py
+@@ -290,6 +290,8 @@
+             new_matrix[:2, :2] = matrix
+             matrix = new_matrix
+         elif matrix.shape != (3, 3):
++            # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
++            # Raise a more specific built-in exception or, create a custom one.
+             raise Exception("Matrix has bad dimensions")
+         return matrix
+ 
